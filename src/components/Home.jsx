@@ -25,6 +25,7 @@ class Home extends React.Component {
               <Link to="/user" />
             }
           />
+          <div>ver. 1520628746.619</div>
         </main>
       </article>
     );
