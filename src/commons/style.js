@@ -16,12 +16,22 @@ export const common = {
   }
 };
 
+export const header = {
+  title: {
+    textAlign: 'center'
+  }
+};
+
 export const user = {
-  section: {
-    paddingTop: 16
-  },
   avatar: {
-    padding: 16,
+    paddingTop: 16,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  progress: {
+    height: window.innerHeight,
+    width: window.innerWidth,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'

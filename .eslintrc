@@ -7,6 +7,8 @@
     "comma-dangle": 0,
     "import/extensions": 0,
     "jsx-a11y/anchor-is-valid": 0,
+    "max-len": 1,
+    "no-unused-expressions": 1,
     "no-unused-vars": 1,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/no-unused-state": 1,

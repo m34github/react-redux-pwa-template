@@ -1,13 +1,72 @@
 import React from 'react';
-import { AppBar } from 'material-ui';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import {
+  AppBar,
+  FontIcon,
+  IconButton
+} from 'material-ui';
 
-const Header = () => (
-  <section>
-    <AppBar
-      showMenuIconButton={false}
-      title="PWA Template"
-    />
-  </section>
-);
+import { header } from '../commons/style';
 
-export default Header;
+class Header extends React.Component {
+  componentWillMount() {
+    const handleLeft = () => {
+      switch (this.props.leftIcon) {
+        case 'chevron_left': {
+          this.props.history.goBack();
+          break;
+        }
+        default: {
+          null;
+        }
+      }
+    };
+
+    const handleRight = () => {
+      switch (this.props.rightIcon) {
+        default: {
+          null;
+        }
+      }
+    };
+
+    this.setState({
+      leftIcon: (
+        <IconButton onClick={handleLeft}>
+          <FontIcon className="material-icons">
+            {this.props.leftIcon}
+          </FontIcon>
+        </IconButton>
+      ),
+      rightIcon: (
+        <IconButton onClick={handleRight}>
+          <FontIcon className="material-icons">
+            {this.props.rightIcon}
+          </FontIcon>
+        </IconButton>
+      )
+    });
+  }
+
+  render() {
+    return (
+      <section>
+        <AppBar
+          title="PWA Template"
+          titleStyle={header.title}
+          iconElementLeft={this.state.leftIcon}
+          iconElementRight={this.state.rightIcon}
+        />
+      </section>
+    );
+  }
+}
+
+Header.propTypes = {
+  history: PropTypes.func.isRequired,
+  leftIcon: PropTypes.string.isRequired,
+  rightIcon: PropTypes.string.isRequired
+};
+
+export default withRouter(Header);
