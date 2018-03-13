@@ -12,6 +12,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "firebase": "^4.10.1",
+    "gh-pages": "^1.1.0",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
@@ -19,12 +20,21 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
   },
   "name": "react-redux-pwa-template",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/m34github/react-redux-pwa-template.git",
   "author": "Makoto Mori <m34.memento.mori@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p",
+    "preghpages": "yarn build",
+    "ghpages": "gh-pages -d public"
+  },
+  "homepage": "https://m34github.github.io/react-redux-pwa-template"
 }
