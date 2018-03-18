@@ -9,19 +9,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js[x]$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
-        test: /\.js[x]$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
           fix: true,
           failOnError: true
         }
-      }
+      },
     ]
   },
   performance: {

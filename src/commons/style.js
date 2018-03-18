@@ -13,11 +13,23 @@ export const sampleTheme = {
 export const common = {
   main: {
     padding: 16
+  },
+  fab: {
+    position: 'fixed',
+    bottom: 32,
+    right: 32
   }
 };
 
 export const header = {
   title: {
+    textAlign: 'center'
+  }
+};
+
+export const login = {
+  loginButton: {
+    paddingTop: 16,
     textAlign: 'center'
   }
 };

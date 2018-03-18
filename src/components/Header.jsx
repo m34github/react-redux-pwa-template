@@ -14,11 +14,10 @@ class Header extends React.Component {
     const handleLeft = () => {
       switch (this.props.leftIcon) {
         case 'chevron_left': {
-          this.props.history.goBack();
-          break;
+          return this.props.history.goBack();
         }
         default: {
-          null;
+          return null;
         }
       }
     };
@@ -26,7 +25,7 @@ class Header extends React.Component {
     const handleRight = () => {
       switch (this.props.rightIcon) {
         default: {
-          null;
+          return null;
         }
       }
     };

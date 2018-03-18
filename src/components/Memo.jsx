@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Subheader } from 'material-ui';
 
 import Header from './Header.jsx';
@@ -21,5 +22,10 @@ class Memo extends React.Component {
     );
   }
 }
+
+Memo.propTypes = {
+  memo: PropTypes.object.isRequired,
+  getMemo: PropTypes.func.isRequired
+};
 
 export default Memo;
