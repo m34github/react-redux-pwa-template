@@ -1,9 +1,11 @@
 import { GET_USER_INFO } from '../actions';
 
 const initialState = {
+  payload: {},
   meta: {
     isLoaded: false
-  }
+  },
+  error: null
 };
 
 const user = (state = initialState, action) => {
