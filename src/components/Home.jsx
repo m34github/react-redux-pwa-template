@@ -27,10 +27,7 @@ class Home extends React.Component {
             }
           />
           <Subheader>
-            ver.
-            {(new Date()).getHours()}-
-            {(new Date()).getMinutes()}-
-            {(new Date()).getSeconds()}
+            ver. 0.7
           </Subheader>
         </main>
       </article>

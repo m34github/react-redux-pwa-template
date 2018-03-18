@@ -16,15 +16,19 @@ import {
 import store from './commons/store';
 import { sampleTheme } from './commons/style';
 
+const App = () => (
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/user" component={User} />
+    <Redirect to="/" />
+  </Switch>
+);
+
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider muiTheme={getMuiTheme(sampleTheme)}>
       <Router>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/user" component={User} />
-          <Redirect to="/" />
-        </Switch>
+        <App />
       </Router>
     </MuiThemeProvider>
   </Provider>,
