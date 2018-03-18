@@ -1,4 +1,5 @@
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.jsx'),
@@ -27,5 +28,8 @@ module.exports = {
   performance: {
     maxEntrypointSize: 1000000,
     maxAssetSize: 1000000
-  }
+  },
+  plugins: [
+    new UglifyJsPlugin()
+  ]
 };
