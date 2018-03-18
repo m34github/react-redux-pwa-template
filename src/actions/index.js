@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+import { db } from '../commons/firebase.config';
+
 export const GET_USER_INFO = 'GET_USER_INFO';
+export const GET_MEMO = 'GET_MEMO';
 
 export const action = {
   getUserInfo: () => {
@@ -14,6 +17,19 @@ export const action = {
             },
             meta: {
               isLoaded: true
+            }
+          });
+        });
+    };
+  },
+  getMemo: () => {
+    return (dispatch, getState) => {
+      db.collection('users').get()
+        .then((snapshot) => {
+          dispatch({
+            type: GET_MEMO,
+            payload: {
+              memo: snapshot.docs[0].data().name
             }
           });
         });

@@ -40,5 +40,10 @@ docs/api/
 .env
 
 # Original
+.firebaserc
+database.rules.json
+firebase.json
+firestore.indexes.json
+*.rules
 public/assets/js/bundle.js
-src/commons/firebase.js
+src/commons/firebase.config.js
