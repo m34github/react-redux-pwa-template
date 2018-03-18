@@ -1,13 +1,14 @@
 const CACHE_NAME = 'pwa-template-v1';
 const urlsToCache = [
-  '/'
+  '/assets/css/',
+  '/assets/js/'
 ]
 
 self.addEventListener('install', (event) => {
   console.log('install');
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      // return cache.addAll(urlsToCache);
+      return cache.addAll(urlsToCache);
     })
   );
 });
