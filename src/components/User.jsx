@@ -69,8 +69,8 @@ class User extends React.Component {
 }
 
 User.propTypes = {
-  getUserInfo: PropTypes.func.isRequired,
-  user: PropTypes.func.isRequired
+  user: PropTypes.object.isRequired,
+  getUserInfo: PropTypes.func.isRequired
 };
 
 export default User;

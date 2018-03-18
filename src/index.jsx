@@ -10,6 +10,8 @@ import {
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 
 import {
+  Authed,
+  Login,
   Home,
   User,
   Memo
@@ -17,20 +19,24 @@ import {
 import store from './commons/store';
 import { sampleTheme } from './commons/style';
 
-const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/user" component={User} />
-    <Route exact path="/memo" component={Memo} />
-    <Redirect to="/" />
-  </Switch>
-);
-
 ReactDOM.render(
   <Provider store={store}>
     <MuiThemeProvider muiTheme={getMuiTheme(sampleTheme)}>
       <Router>
-        <App />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/user" component={User} />
+
+          <Authed>
+            <Switch>
+              <Route exact path="/memo" component={Memo} />
+              <Redirect to="/" />
+            </Switch>
+          </Authed>
+
+          <Redirect to="/" />
+        </Switch>
       </Router>
     </MuiThemeProvider>
   </Provider>,
