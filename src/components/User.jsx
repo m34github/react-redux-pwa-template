@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Avatar,
-  CircularProgress,
   FontIcon,
   List,
   ListItem,
@@ -10,6 +9,7 @@ import {
 } from 'material-ui';
 
 import Header from './Header.jsx';
+import Loader from './Loader.jsx';
 import { common, user } from '../commons/style';
 
 class User extends React.Component {
@@ -21,7 +21,7 @@ class User extends React.Component {
     if (this.props.user.meta.isLoaded) {
       return (
         <article>
-          <Header leftIcon="chevron_left" />
+          <Header leftIcon="chevron_left" rightIcon="more_vert" />
 
           <main style={common.main}>
             <Paper>
@@ -60,9 +60,7 @@ class User extends React.Component {
     }
     return (
       <article>
-        <section style={user.progress}>
-          <CircularProgress size={80} />
-        </section>
+        <Loader />
       </article>
     );
   }

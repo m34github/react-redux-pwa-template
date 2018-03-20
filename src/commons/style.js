@@ -27,6 +27,16 @@ export const header = {
   }
 };
 
+export const loader = {
+  progress: {
+    height: window.innerHeight,
+    width: window.innerWidth,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+};
+
 export const login = {
   loginButton: {
     paddingTop: 16,
@@ -37,13 +47,6 @@ export const login = {
 export const user = {
   avatar: {
     paddingTop: 16,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  progress: {
-    height: window.innerHeight,
-    width: window.innerWidth,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center'

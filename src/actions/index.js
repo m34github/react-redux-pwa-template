@@ -36,6 +36,9 @@ export const action = {
             isLoaded: true
           }
         });
+      })
+      .catch((err) => {
+        console.log('error:', err); // eslint-disable-line
       });
   },
   getMemo: () => (dispatch) => {
@@ -47,6 +50,9 @@ export const action = {
             memo: snapshot.docs[0].data().name
           }
         });
+      })
+      .catch((err) => {
+        console.log('error:', err); // eslint-disable-line
       });
   },
   tryLogin: (email, password) => (dispatch) => {
@@ -62,6 +68,18 @@ export const action = {
             isLoaded: true
           }
         });
+      })
+      .catch((err) => {
+        console.log('error:', err); // eslint-disable-line
+      });
+  },
+  tryLogout: () => () => {
+    auth.signOut()
+      .then(() => {
+        console.log('signed out'); // eslint-disable-line
+      })
+      .catch((err) => {
+        console.log('error:', err); // eslint-disable-line
       });
   }
 };

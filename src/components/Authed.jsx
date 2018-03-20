@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { CircularProgress } from 'material-ui';
 
-import { user } from '../commons/style';
+import Loader from './Loader.jsx';
 
 class Authed extends React.Component {
   componentDidMount() {
@@ -19,9 +18,7 @@ class Authed extends React.Component {
     }
     return (
       <article>
-        <section style={user.progress}>
-          <CircularProgress size={80} />
-        </section>
+        <Loader />
       </article>
     );
   }
