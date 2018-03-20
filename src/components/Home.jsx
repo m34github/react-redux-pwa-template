@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  FloatingActionButton,
-  FontIcon,
   RaisedButton,
   Subheader
 } from 'material-ui';
@@ -10,13 +8,11 @@ import {
 import Header from './Header.jsx';
 import { common } from '../commons/style';
 
-import { auth } from '../commons/firebase.config';
-
 class Home extends React.Component {
   render() {
     return (
       <article>
-        <Header />
+        <Header rightIcon="more_vert" />
 
         <main style={common.main}>
           <Subheader>w/o auth</Subheader>
@@ -43,25 +39,6 @@ class Home extends React.Component {
             }
           />
         </main>
-
-        <FloatingActionButton style={common.fab}>
-          <FontIcon
-            className="material-icons"
-            onClick={
-              () => {
-                auth.signOut()
-                  .then(() => {
-                    console.log('signed out'); // eslint-disable-line
-                  })
-                  .catch((err) => {
-                    console.log('error:', err); // eslint-disable-line
-                  });
-              }
-            }
-          >
-            exit_to_app
-          </FontIcon>
-        </FloatingActionButton>
       </article>
     );
   }

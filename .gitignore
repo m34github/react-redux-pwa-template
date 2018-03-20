@@ -40,6 +40,8 @@ docs/api/
 .env
 
 # Original
+coverage/
+__tests__/
 .firebaserc
 database.rules.json
 firebase.json

@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import {
   AppBar,
+  Drawer,
   FontIcon,
   IconButton
 } from 'material-ui';
 
+import { SideMenu } from '../containers';
 import { header } from '../commons/style';
 
 class Header extends React.Component {
@@ -24,6 +26,11 @@ class Header extends React.Component {
 
     const handleRight = () => {
       switch (this.props.rightIcon) {
+        case 'more_vert': {
+          return this.setState({
+            open: !this.state.open
+          });
+        }
         default: {
           return null;
         }
@@ -44,7 +51,8 @@ class Header extends React.Component {
             {this.props.rightIcon}
           </FontIcon>
         </IconButton>
-      )
+      ),
+      open: false
     });
   }
 
@@ -57,19 +65,28 @@ class Header extends React.Component {
           iconElementLeft={this.state.leftIcon}
           iconElementRight={this.state.rightIcon}
         />
+        <Drawer
+          docked={false}
+          open={this.state.open}
+          openSecondary
+          onRequestChange={() => {
+            this.setState({ open: false });
+          }}
+        >
+          <SideMenu />
+        </Drawer>
       </section>
     );
   }
 }
 
 Header.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
   leftIcon: PropTypes.string,
   rightIcon: PropTypes.string
 };
 
 Header.defaultProps = {
-  history: null,
   leftIcon: null,
   rightIcon: null
 };

@@ -13,7 +13,7 @@ class Memo extends React.Component {
   render() {
     return (
       <article>
-        <Header leftIcon="chevron_left" />
+        <Header leftIcon="chevron_left" rightIcon="more_vert" />
 
         <main style={common.main}>
           <Subheader>{this.props.memo.payload.memo}</Subheader>

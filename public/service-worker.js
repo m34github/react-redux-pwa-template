@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-template-v1';
+const CACHE_NAME = 'pwa-template-v2';
 const urlsToCache = [
   '/assets/css/',
   '/assets/js/'
@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   console.log('activate');
-  const cacheWhitelist = ['pwa-template-v1'];
+  const cacheWhitelist = ['pwa-template-v2'];
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(

@@ -21,7 +21,7 @@ module.exports = {
           fix: true,
           failOnError: true
         }
-      },
+      }
     ]
   },
   performance: {
