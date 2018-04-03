@@ -7,7 +7,7 @@ import {
 
 export const CHECK_AUTH = 'CHECK_AUTH';
 export const GET_USER_INFO = 'GET_USER_INFO';
-export const GET_MEMO = 'GET_MEMO';
+export const READ_MEMO = 'READ_MEMO';
 
 export const action = {
   checkAuth: () => (dispatch) => {
@@ -38,21 +38,18 @@ export const action = {
         });
       })
       .catch((err) => {
-        console.log('error:', err); // eslint-disable-line
+        console.error('error:', err); // eslint-disable-line
       });
   },
-  getMemo: () => (dispatch) => {
-    db.collection('users').get()
-      .then((snapshot) => {
+  readMemo: () => (dispatch) => {
+    db.collection('users')
+      .onSnapshot((snapshot) => {
         dispatch({
-          type: GET_MEMO,
+          type: READ_MEMO,
           payload: {
-            memo: snapshot.docs[0].data().name
+            memo: snapshot.docs[0].data().memo
           }
         });
-      })
-      .catch((err) => {
-        console.log('error:', err); // eslint-disable-line
       });
   },
   tryLogin: (email, password) => (dispatch) => {
@@ -70,7 +67,7 @@ export const action = {
         });
       })
       .catch((err) => {
-        console.log('error:', err); // eslint-disable-line
+        console.error('error:', err); // eslint-disable-line
       });
   },
   tryLogout: () => () => {
@@ -79,7 +76,22 @@ export const action = {
         console.log('signed out'); // eslint-disable-line
       })
       .catch((err) => {
-        console.log('error:', err); // eslint-disable-line
+        console.error('error:', err); // eslint-disable-line
+      });
+  },
+  writeMemo: (uid, memo) => () => {
+    db.collection('users')
+      .where('uid', '==', uid)
+      .get()
+      .then((snapshot) => {
+        db.collection('users')
+          .doc(snapshot.docs[0].id)
+          .update({
+            memo: snapshot.docs[0].data().memo.concat([memo])
+          });
+      })
+      .catch((err) => {
+        console.error('error:', err); // eslint-disable-line
       });
   }
 };

@@ -30,6 +30,7 @@ class Home extends React.Component {
               <Link to="/user" />
             }
           />
+          {/*
           <Subheader>w/ auth</Subheader>
           <RaisedButton
             label="Memo"
@@ -38,6 +39,7 @@ class Home extends React.Component {
               <Link to="/memo" />
             }
           />
+          */}
         </main>
       </article>
     );

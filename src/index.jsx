@@ -31,7 +31,7 @@ ReactDOM.render(
           <Authed>
             <Switch>
               <Route exact path="/memo" component={Memo} />
-              <Redirect to="/" />
+              <Redirect to="/memo" />
             </Switch>
           </Authed>
 
