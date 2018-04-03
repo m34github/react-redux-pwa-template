@@ -44,6 +44,19 @@ export const login = {
   }
 };
 
+export const memo = {
+  footer: {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%'
+  },
+  paper: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  }
+};
+
 export const user = {
   avatar: {
     paddingTop: 16,

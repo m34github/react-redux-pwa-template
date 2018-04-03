@@ -1,14 +1,16 @@
-import { GET_MEMO } from '../actions';
+import { READ_MEMO } from '../actions';
 
 const initialState = {
-  payload: {},
+  payload: {
+    memo: []
+  },
   meta: {},
   error: null
 };
 
 const memo = (state = initialState, action) => {
   switch (action.type) {
-    case GET_MEMO: {
+    case READ_MEMO: {
       return Object.assign({}, state, {
         payload: action.payload
       });

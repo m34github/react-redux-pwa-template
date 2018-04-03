@@ -17,14 +17,17 @@ const mapDispatchToProps = dispatch => ({
   getUserInfo: () => {
     dispatch(action.getUserInfo());
   },
-  getMemo: () => {
-    dispatch(action.getMemo());
+  readMemo: () => {
+    dispatch(action.readMemo());
   },
   tryLogin: (email, password) => {
     dispatch(action.tryLogin(email, password));
   },
   tryLogout: () => {
     dispatch(action.tryLogout());
+  },
+  writeMemo: (uid, memo) => {
+    dispatch(action.writeMemo(uid, memo));
   }
 });
 
