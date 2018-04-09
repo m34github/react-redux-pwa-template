@@ -36,32 +36,3 @@ export const loader = {
     alignItems: 'center'
   }
 };
-
-export const login = {
-  loginButton: {
-    paddingTop: 16,
-    textAlign: 'center'
-  }
-};
-
-export const memo = {
-  footer: {
-    position: 'fixed',
-    bottom: 0,
-    width: '100%'
-  },
-  paper: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-  }
-};
-
-export const user = {
-  avatar: {
-    paddingTop: 16,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-};
