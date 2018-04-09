@@ -1,4 +1,4 @@
-import { GET_USER_INFO } from '../actions';
+import { LOAD_HOME } from '../actions';
 
 const initialState = {
   payload: {},
@@ -8,11 +8,10 @@ const initialState = {
   error: null
 };
 
-const user = (state = initialState, action) => {
+const homeReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_USER_INFO: {
+    case LOAD_HOME: {
       return Object.assign({}, state, {
-        payload: action.payload,
         meta: action.meta
       });
     }
@@ -22,4 +21,4 @@ const user = (state = initialState, action) => {
   }
 };
 
-export default user;
+export default homeReducer;

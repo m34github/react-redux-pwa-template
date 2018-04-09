@@ -7,32 +7,7 @@ import {
 } from 'material-ui';
 
 class SideMenu extends React.Component {
-  componentWillMount() {
-    this.props.checkAuth();
-  }
-
-  tryLogout() {
-    this.props.tryLogout();
-    this.props.history.push('/');
-  }
-
   render() {
-    if (this.props.authed.meta.isAuthed) {
-      return (
-        <section>
-          <MenuItem
-            leftIcon={<FontIcon className="material-icons">face</FontIcon>}
-          >
-            {this.props.authed.payload.user.displayName}
-          </MenuItem>
-          <MenuItem
-            onClick={() => { this.tryLogout(); }}
-          >
-            Log out
-          </MenuItem>
-        </section>
-      );
-    }
     return (
       <section>
         <MenuItem
@@ -41,7 +16,7 @@ class SideMenu extends React.Component {
           Guest
         </MenuItem>
         <MenuItem
-          onClick={() => { this.props.history.push('/login'); }}
+          onClick={() => { this.props.history.push('/'); }}
         >
           Log in
         </MenuItem>
@@ -51,9 +26,6 @@ class SideMenu extends React.Component {
 }
 
 SideMenu.propTypes = {
-  authed: PropTypes.object.isRequired,
-  checkAuth: PropTypes.func.isRequired,
-  tryLogout: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired
 };
 
