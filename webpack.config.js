@@ -27,5 +27,10 @@ module.exports = {
   performance: {
     maxEntrypointSize: 1000000,
     maxAssetSize: 1000000
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
+    port: 3000
   }
 };

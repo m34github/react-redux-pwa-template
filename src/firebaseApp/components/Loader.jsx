@@ -1,7 +1,7 @@
 import React from 'react';
 import { CircularProgress } from 'material-ui';
 
-import { loader } from '../commons/style';
+import { loader } from '../style';
 
 const Loader = () => (
   <section style={loader.progress}>
