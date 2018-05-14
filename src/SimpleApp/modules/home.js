@@ -2,7 +2,7 @@
 const LOAD_HOME = 'LOAD_HOME';
 
 // action creator
-export const loadHome = () => (dispatch) => {
+const loadHome = () => (dispatch) => {
   setTimeout(() => {
     dispatch({
       type: LOAD_HOME,
@@ -32,4 +32,5 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+export { loadHome };
 export default reducer;

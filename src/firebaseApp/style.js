@@ -10,6 +10,29 @@ export const firebaseAppTheme = {
   }
 };
 
+export const auth = {
+  title: {
+    paddingBottom: 32,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  img: {
+    borderRadius: 16,
+    width: 120
+  },
+  divider: {
+    marginTop: 16,
+    marginBottom: 16
+  },
+  main: {
+    padding: 64
+  },
+  textField: {
+    paddingBottom: 12
+  }
+};
+
 export const loader = {
   progress: {
     height: window.innerHeight,

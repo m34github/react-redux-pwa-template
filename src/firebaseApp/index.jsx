@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 
-import Auth from './components/Auth.jsx';
+import Auth from './containers/Auth';
 import Authed from './containers/Authed';
 import Home from './containers/Home';
 import store from './modules';
@@ -17,15 +17,15 @@ export default class App extends React.Component {
           <article>
             <Router>
               <Switch>
-                <Route exact path="/register" component={Auth} />
-                <Route exact path="/login" component={Auth} />
+                <Route exact path="/auth" component={Auth} />
 
                 <Authed>
                   <Route exact path="/" component={Home} />
+                  <Route exact path="/hello" component={Home} />
                   <Redirect to="/" />
                 </Authed>
 
-                <Redirect to="/register" />
+                <Redirect to="/auth" />
               </Switch>
             </Router>
           </article>

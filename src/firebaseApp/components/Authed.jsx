@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 import Loader from './Loader.jsx';
 
-export default class Authed extends React.Component {
+class Authed extends React.Component {
   componentDidMount() {
-    this.props.checkAuth();
+    this.props.checkAuthed();
   }
 
   render() {
@@ -14,7 +15,7 @@ export default class Authed extends React.Component {
         return this.props.children;
       }
       return (
-        <Redirect to="/login" />
+        <Redirect to="/auth" />
       );
     }
     return (
@@ -24,3 +25,11 @@ export default class Authed extends React.Component {
     );
   }
 }
+
+Authed.propTypes = {
+  authed: PropTypes.object.isRequired,
+  checkAuthed: PropTypes.func.isRequired,
+  children: PropTypes.array.isRequired
+};
+
+export default Authed;

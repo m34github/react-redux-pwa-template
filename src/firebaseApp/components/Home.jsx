@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FontIcon, List, ListItem, Subheader } from 'material-ui';
 
-import Header from './Header.jsx';
+import Header from '../containers/Header';
 import Loader from './Loader.jsx';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   componentDidMount() {
     this.props.loadHome();
   }
@@ -36,3 +36,5 @@ Home.propTypes = {
   home: PropTypes.object.isRequired,
   loadHome: PropTypes.func.isRequired
 };
+
+export default Home;
