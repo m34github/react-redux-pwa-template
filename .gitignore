@@ -42,3 +42,8 @@ docs/api/
 # Original
 coverage/
 public/assets/js/bundle.js
+firebase.config.js
+.firebaserc
+database.rules.json
+firebase.json
+storage.rules
