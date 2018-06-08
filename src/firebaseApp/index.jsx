@@ -6,6 +6,7 @@ import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 import Auth from './containers/Auth';
 import Authed from './containers/Authed';
 import Home from './containers/Home';
+import Random from './containers/Random';
 import store from './modules';
 import { firebaseAppTheme } from './style';
 
@@ -21,7 +22,7 @@ export default class App extends React.Component {
 
                 <Authed>
                   <Route exact path="/" component={Home} />
-                  <Route exact path="/hello" component={Home} />
+                  <Route exact path="/random" component={Random} />
                   <Redirect to="/" />
                 </Authed>
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontIcon, List, ListItem, Subheader } from 'material-ui';
+import { RaisedButton, Subheader } from 'material-ui';
 
 import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 import Loader from './Loader.jsx';
+import { common } from '../style';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -16,11 +18,13 @@ class Home extends React.Component {
         <article>
           <Header />
           <Subheader>Home</Subheader>
-          <List>
-            <ListItem primaryText="Foo" leftIcon={<FontIcon className="material-icons">grade</FontIcon>} />
-            <ListItem primaryText="Bar" leftIcon={<FontIcon className="material-icons">favorite</FontIcon>} />
-            <ListItem primaryText="Baz" leftIcon={<FontIcon className="material-icons">android</FontIcon>} />
-          </List>
+
+          <section style={common.main}>
+            <RaisedButton primary label="Primary" />
+            <RaisedButton secondary label="Secondary" />
+          </section>
+
+          <Footer index={0} />
         </article>
       );
     }

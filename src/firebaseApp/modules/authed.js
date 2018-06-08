@@ -1,4 +1,4 @@
-import { auth } from '../firebase.config';
+import { auth } from '../.env/firebase.config';
 
 const CHECK_AUTHED = 'CHECK_AUTHED';
 

@@ -1,4 +1,4 @@
-import { auth } from '../firebase.config';
+import { auth } from '../.env/firebase.config';
 
 const LOGOUT_USER = 'LOGOUT_USER';
 

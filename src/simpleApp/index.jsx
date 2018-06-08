@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-d
 import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
 
 import Home from './containers/Home';
+import Random from './containers/Random';
 import store from './modules';
 import { simpleAppTheme } from './style';
 
@@ -16,6 +17,7 @@ export default class App extends React.Component {
             <Router>
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/random" component={Random} />
                 <Redirect to="/" />
               </Switch>
             </Router>

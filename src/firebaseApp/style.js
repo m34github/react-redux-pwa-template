@@ -1,16 +1,16 @@
 import { colors } from 'material-ui/styles';
 
-export const primary = colors.blue500;
-export const secondary = colors.amber500;
+const primary = colors.blue500;
+const secondary = colors.amber500;
 
-export const firebaseAppTheme = {
+const firebaseAppTheme = {
   palette: {
     primary1Color: primary,
     accent1Color: secondary
   }
 };
 
-export const auth = {
+const auth = {
   title: {
     paddingBottom: 32,
     display: 'flex',
@@ -33,7 +33,22 @@ export const auth = {
   }
 };
 
-export const loader = {
+const common = {
+  main: {
+    padding: 12,
+    marginBottom: 56
+  }
+};
+
+const footer = {
+  paper: {
+    position: 'fixed',
+    bottom: 0,
+    width: '100%'
+  }
+};
+
+const loader = {
   progress: {
     height: window.innerHeight,
     width: window.innerWidth,
@@ -42,3 +57,5 @@ export const loader = {
     alignItems: 'center'
   }
 };
+
+export { primary, secondary, firebaseAppTheme, auth, common, footer, loader };
