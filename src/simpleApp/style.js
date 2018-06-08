@@ -1,18 +1,7 @@
-import { colors } from 'material-ui/styles';
-
-const primary = colors.deepPurple600;
-const secondary = colors.orange600;
-
-const simpleAppTheme = {
-  palette: {
-    primary1Color: primary,
-    accent1Color: secondary
-  }
-};
-
 const common = {
   main: {
     padding: 12,
+    marginTop: 56,
     marginBottom: 56
   }
 };
@@ -35,4 +24,4 @@ const loader = {
   }
 };
 
-export { primary, secondary, simpleAppTheme, common, footer, loader };
+export { common, footer, loader };
