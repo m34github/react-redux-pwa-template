@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardHeader, CardMedia, Subheader } from 'material-ui';
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -21,18 +21,19 @@ class Random extends React.Component {
       return (
         <article>
           <Header />
-          <Subheader>Random</Subheader>
 
           <section style={common.main}>
+            <Typography variant="subheading">Random</Typography>
             <Card>
-              <CardMedia>
-                <img src="https://source.unsplash.com/random/800x450" alt="Unsplash" />
-              </CardMedia>
-              <CardHeader
-                avatar={this.props.random.user.picture.large}
-                title={this.props.random.user.login.username}
-                subtitle={this.props.random.user.email}
+              <CardMedia
+                style={{ height: 0, paddingTop: '56.25%' }}
+                image="https://source.unsplash.com/random/800x450"
+                title="unsplash"
               />
+              <CardContent>
+                <Typography variant="headline">{this.props.random.user.login.username}</Typography>
+                <Typography component="p">{this.props.random.user.email}</Typography>
+              </CardContent>
             </Card>
           </section>
 

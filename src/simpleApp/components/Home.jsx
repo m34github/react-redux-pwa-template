@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RaisedButton, Subheader } from 'material-ui';
+import { Button, Typography } from '@material-ui/core';
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -17,11 +17,11 @@ class Home extends React.Component {
       return (
         <article>
           <Header />
-          <Subheader>Home</Subheader>
 
           <section style={common.main}>
-            <RaisedButton primary label="Primary" />
-            <RaisedButton secondary label="Secondary" />
+            <Typography variant="subheading">Home</Typography>
+            <Button variant="contained" color="primary">Primary</Button>
+            <Button variant="contained" color="secondary">Secondary</Button>
           </section>
 
           <Footer index={0} />

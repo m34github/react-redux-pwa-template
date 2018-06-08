@@ -1,12 +1,15 @@
 import React from 'react';
-import { AppBar } from 'material-ui';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 const Header = () => (
   <section>
-    <AppBar
-      title="SimpleApp"
-      showMenuIconButton={false}
-    />
+    <AppBar>
+      <Toolbar>
+        <Typography variant="title" color="inherit">
+          SimpleApp
+        </Typography>
+      </Toolbar>
+    </AppBar>
   </section>
 );
 

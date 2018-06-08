@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import { BottomNavigation, BottomNavigationItem, FontIcon, Paper } from 'material-ui';
+import { BottomNavigation, BottomNavigationAction, Icon, Paper } from '@material-ui/core';
 
 import { footer } from '../style';
 
@@ -14,15 +14,18 @@ class Footer extends React.Component {
     return (
       <section style={footer.paper}>
         <Paper>
-          <BottomNavigation selectedIndex={this.props.index}>
-            <BottomNavigationItem
+          <BottomNavigation
+            showLabels
+            value={this.props.index}
+          >
+            <BottomNavigationAction
               label="Home"
-              icon={<FontIcon className="material-icons">home</FontIcon>}
+              icon={<Icon>home</Icon>}
               onClick={() => { this.select('/'); }}
             />
-            <BottomNavigationItem
+            <BottomNavigationAction
               label="Random"
-              icon={<FontIcon className="material-icons">help_outline</FontIcon>}
+              icon={<Icon>help_outline</Icon>}
               onClick={() => { this.select('/random'); }}
             />
           </BottomNavigation>
