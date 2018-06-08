@@ -39,7 +39,7 @@ class Header extends React.Component {
           openSecondary
           onRequestChange={() => { this.handleClose(); }}
         >
-          <AppBar title="hello" showMenuIconButton={false} />
+          <AppBar title="Side menu" showMenuIconButton={false} />
           <MenuItem onClick={() => { this.props.logoutUser(); }}>Log out</MenuItem>
         </Drawer>
       </section>
