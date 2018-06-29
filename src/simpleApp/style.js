@@ -1,16 +1,20 @@
+import { colors, createMuiTheme } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#005BAC'
+    },
+    secondary: {
+      main: colors.cyan['500'],
+      contrastText: '#FFF'
+    }
+  }
+});
+
 const common = {
   main: {
-    padding: 12,
-    marginTop: 56,
-    marginBottom: 56
-  }
-};
-
-const footer = {
-  paper: {
-    position: 'fixed',
-    bottom: 0,
-    width: '100%'
+    padding: '12px 24px 12px 24px'
   }
 };
 
@@ -24,4 +28,4 @@ const loader = {
   }
 };
 
-export { common, footer, loader };
+export { theme, common, loader };

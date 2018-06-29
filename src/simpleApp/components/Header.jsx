@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography } from '@material-ui/core';
 
 const Header = () => (
   <section>
-    <AppBar>
+    <AppBar position="static">
       <Toolbar>
         <Typography variant="title" color="inherit">
           SimpleApp

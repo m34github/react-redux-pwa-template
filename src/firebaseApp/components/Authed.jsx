@@ -10,19 +10,19 @@ class Authed extends React.Component {
   }
 
   render() {
-    if (this.props.authed.isLoaded) {
-      if (this.props.authed.isAuthed) {
-        return this.props.children;
-      }
+    if (!this.props.authed.isLoaded) {
       return (
-        <Redirect to="/auth" />
+        <article>
+          <Loader />
+        </article>
       );
     }
-    return (
-      <article>
-        <Loader />
-      </article>
-    );
+
+    if (this.props.authed.isAuthed) {
+      return this.props.children;
+    }
+
+    return (<Redirect to="/auth" />);
   }
 }
 
