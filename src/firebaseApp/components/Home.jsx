@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RaisedButton, Subheader } from 'material-ui';
+import { Button, Typography, withStyles } from '@material-ui/core';
 
 import Header from '../containers/Header';
-import Footer from './Footer.jsx';
 import Loader from './Loader.jsx';
 import { common } from '../style';
 
@@ -13,21 +12,22 @@ class Home extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     if (this.props.home.isLoaded) {
       return (
         <article>
           <Header />
-          <Subheader>Home</Subheader>
 
-          <section style={common.main}>
-            <RaisedButton primary label="Primary" />
-            <RaisedButton secondary label="Secondary" />
-          </section>
-
-          <Footer index={0} />
+          <main className={classes.main}>
+            <Typography variant="subheading">Home</Typography>
+            <Button variant="contained" color="primary">Primary</Button>
+            <Button variant="contained" color="secondary">Secondary</Button>
+          </main>
         </article>
       );
     }
+
     return (
       <article>
         <Loader />
@@ -37,8 +37,9 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
+  classes: PropTypes.object.isRequired,
   home: PropTypes.object.isRequired,
   loadHome: PropTypes.func.isRequired
 };
 
-export default Home;
+export default withStyles(common)(Home);

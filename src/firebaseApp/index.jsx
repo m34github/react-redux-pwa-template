@@ -1,20 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
-import { getMuiTheme, MuiThemeProvider } from 'material-ui/styles';
+import { MuiThemeProvider } from '@material-ui/core';
 
 import Auth from './containers/Auth';
 import Authed from './containers/Authed';
 import Home from './containers/Home';
-import Random from './containers/Random';
 import store from './modules';
-import { firebaseAppTheme } from './style';
+import { theme } from './style';
 
 export default class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <MuiThemeProvider muiTheme={getMuiTheme(firebaseAppTheme)}>
+        <MuiThemeProvider theme={theme}>
           <article>
             <Router>
               <Switch>
@@ -22,7 +21,6 @@ export default class App extends React.Component {
 
                 <Authed>
                   <Route exact path="/" component={Home} />
-                  <Route exact path="/random" component={Random} />
                   <Redirect to="/" />
                 </Authed>
 

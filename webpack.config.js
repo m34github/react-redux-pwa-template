@@ -1,4 +1,5 @@
 const path = require('path');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.jsx'),
@@ -24,6 +25,23 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new WorkboxPlugin.GenerateSW({
+      swDest: path.join(__dirname, 'public', 'assets', 'js', 'sw.js'),
+      runtimeCaching: [
+        {
+          urlPattern: '/',
+          handler: 'networkFirst',
+          options: {
+            cacheName: 'home',
+            expiration: {
+              maxAgeSeconds: 60 * 60 * 24
+            }
+          }
+        }
+      ]
+    })
+  ],
   performance: {
     maxEntrypointSize: 1000000,
     maxAssetSize: 1000000

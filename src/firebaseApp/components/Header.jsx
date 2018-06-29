@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Drawer, FontIcon, IconButton, MenuItem } from 'material-ui';
+import { withRouter } from 'react-router-dom';
+import { AppBar, Drawer, Icon, IconButton, MenuItem, Toolbar, Typography, withStyles } from '@material-ui/core';
+
+import { header } from '../style';
 
 class Header extends React.Component {
   constructor(props) {
@@ -23,24 +26,34 @@ class Header extends React.Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <section>
-        <AppBar
-          title="FirebaseApp"
-          showMenuIconButton={false}
-          iconElementRight={
-            <IconButton><FontIcon className="material-icons">more_vert</FontIcon></IconButton>
-        }
-          onRightIconButtonClick={() => { this.handleToggle(); }}
-        />
-        <Drawer
-          docked={false}
-          open={this.state.open}
-          openSecondary
-          onRequestChange={() => { this.handleClose(); }}
-        >
-          <AppBar title="Side menu" showMenuIconButton={false} />
-          <MenuItem onClick={() => { this.props.logoutUser(); }}>Log out</MenuItem>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="title" color="inherit" className={classes.typography}>
+              FirebaseApp
+            </Typography>
+            <IconButton color="inherit" onClick={() => { this.handleToggle(); }}>
+              <Icon>more_vert</Icon>
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+
+        <Drawer anchor="right" open={this.state.open} onClose={() => { this.handleClose(); }}>
+          <section className={classes.sideMenu}>
+            <AppBar position="static">
+              <Toolbar>
+                <Typography variant="subheading" color="inherit">
+                  SideMenu
+                </Typography>
+              </Toolbar>
+            </AppBar>
+            <MenuItem onClick={this.props.logoutUser}>
+              Logout
+            </MenuItem>
+          </section>
         </Drawer>
       </section>
     );
@@ -48,7 +61,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  classes: PropTypes.object.isRequired,
   logoutUser: PropTypes.func.isRequired
 };
 
-export default Header;
+export default withRouter(withStyles(header)(Header));
